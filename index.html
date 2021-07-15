@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>27 paskaita</title>
+    <style>
+        .melynas {
+            background-color: blue;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class='container'>
+        
+
+    </div>
+
+
+    <script>
+        'use strict';
+
+        //Susikurti objektu masyva:
+        //masyve 100 objekto elementu
+        // Objekto vidiniai kintamieji: id, vardas
+        //vardas reiksme = vardas1, vardas2 ir t.t
+        //Id reiksme = 1, 2, ir tt
+
+        //pagal sukurta objektu masyva, sukurti tiek pat div elementu
+        //kuriuose isvedamas id ir vardas
+        //kas antras div elementas melynas
+
+        //kaip tiek obj sukurti?
+        //kaip juos patalpinti i masyva?
+
+        var testObjektas = {
+            id: 58,
+            vardas: 'vardas58'
+        }
+
+        var container = document.querySelector('.container');
+
+        var masyvas = [];
+
+        //Ciklas (javascript for loop)
+        for (var i=0; i < 100; i++) {
+            // var masyvas = [];
+            var masyvoObjektas = {
+            id: i+1,
+            vardas: 'vardas' + (i+1)
+        }; //sukuria masyva
+        masyvas.push(masyvoObjektas); //patalpina i masyva
+
+            // console.log(masyvoObjektas);
+        }
+        //55 - 65
+        //Atvaizduos tik lyginius elementus pagal id reiksme
+        for (var i=0; i<masyvas.length; i++) {
+            //masyvas[i] - vienas objektas
+            //masyvoObjektas.id
+
+            var div = document.createElement('div');
+            //div kintamajame butu id ir vardas or kas antras butu melynas
+            //var isvedimoElementas = document.querySelector('.kazkas')
+            //isvedimoElementas.innerHTML = kintamasis; - isvedamas rezultatas
+            //                  innerText = kintamasis; - isvedamas rezultatas interpretuojamas kaip tekstas kaip tekstas
+
+            div.innerHTML = masyvas[i].id + ' ' + masyvas[i].vardas;
+           
+            
+
+
+
+            if(masyvas[i].id % 2 == 0) {
+                div.classList.add('melynas');
+                console.log(masyvas[i]);
+
+            }
+
+            container.append(div);
+
+
+        //    console.log(masyvas[i].id);
+        //    console.log(masyvas[i].vardas);
+
+
+            // console.log(masyvas[i]);
+        }
+
+        // console.log(masyvas);
+        // console.log(masyvas[54]);
+        // console.log(masyvas[0]);
+        // console.log(masyvas[99]);
+
+
+
+
+    </script>
+    
+</body>
+</html>
